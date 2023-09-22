@@ -1,11 +1,14 @@
+"use client"
 import React from 'react'
-import style from "../styles/home.module.css"
+import style from "../styles/home.module.css";
+import {homePageMidddleData} from "../contents/info";
+import Image from 'next/image';
 const HomePage = () => {
   return (
     <div>
         <div >
-            <div className="hero min-h-screen bg-slate-200" >
-            <div className="hero-content flex-col lg:flex-row-reverse" style={{width:"70%"}}>
+            <div className="hero min-h-screen ">
+            <div className="hero-content flex-col lg:flex-row-reverse" style={{width:"85%"}}>
                 <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnQlMjBwb3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=300&q=60" className="max-w-sm rounded-lg shadow-2xl" />
                 <div>
                 <p class={style.headings}>Trending</p>
@@ -15,6 +18,65 @@ const HomePage = () => {
                 </div>
             </div>
             </div>
+
+            <div>
+                <h1 class={style.headings} style={{textAlign:"center",marginTop:"-30px",marginBottom:"30px"}}>Featuring</h1>
+            </div>
+
+        </div>
+
+        <div class={style.webbox}>
+            <div className="mockup-browser border border-base-300">
+                <div className="mockup-browser-toolbar">
+                    <div className="input border border-base-300">https://plantworld.com</div>
+                </div>
+                <div className="flex justify-center px-4 py-16 border-t border-base-300">
+
+                <div className={style.cards}>
+                {homePageMidddleData?.map((el,i)=>(
+                    <div className="card w-96 glass m-auto" key={i}>
+                    <figure><Image src={el.imgs} alt="car!" width={300} height={300} style={{width:"300px",height:"300px",borderRadius:"10px",marginTop:"10px"}}/></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">{el.titles}</h2>
+                        <p>{el.para}</p>
+                        <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Learn now!</button>
+                        </div>
+                    </div>
+                </div>
+                ))}
+            </div>
+                </div>
+            </div>
+        </div>
+
+        {/* footer */}
+
+        <div class={style.foot}>
+        <footer className="footer p-10 bg-base-300 text-base-content">
+        <nav>
+            <header className="footer-title">Services</header> 
+            <a className="link link-hover">Branding</a> 
+            <a className="link link-hover">Design</a> 
+            <a className="link link-hover">Marketing</a> 
+            <a className="link link-hover">Advertisement</a>
+        </nav> 
+        <nav>
+            <header className="footer-title">Company</header> 
+            <a className="link link-hover">About us</a> 
+            <a className="link link-hover">Contact</a> 
+            <a className="link link-hover">Jobs</a> 
+            <a className="link link-hover">Press kit</a>
+        </nav> 
+        <nav>
+            <header className="footer-title">Social</header> 
+            <div className="grid grid-flow-col gap-4">
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+            </div>
+        </nav>
+        </footer>
         </div>
     </div>
   )

@@ -3,7 +3,7 @@ import { getPosts } from '../ghost-config';
 import Blogsclient from '../components/blogsclient';
 
 const Posts = async() => {
-    // const posts = await getPosts();
+    const posts = await getPosts();
     // console.log(posts);
   return (
     <div>

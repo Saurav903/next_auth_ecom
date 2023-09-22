@@ -6,7 +6,9 @@ import HomePage from './components/home'
 export default function Home() {
   return (
     <main>
-      <Navbar/>
+      <div style={{position:"fixed",zIndex:1,width:"100%"}}>
+        <Navbar/>
+      </div>
       <HomePage/>
     </main>
   )
