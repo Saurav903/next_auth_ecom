@@ -1,11 +1,13 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
+import Navbar from './components/navbar'
+import HomePage from './components/home'
 
 export default function Home() {
   return (
     <main>
-      <h1>Hello</h1>
-      <Link href={"/authenticate"}>login page</Link>
+      <Navbar/>
+      <HomePage/>
     </main>
   )
 }
