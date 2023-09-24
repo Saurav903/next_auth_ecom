@@ -21,8 +21,8 @@ const Navbar = () => {
 
 
         <div class="m-auto grid grid-cols-4 w-3/6 items-center" >
-          <div className={style.textall} onClick={()=>router.push("/blogs")}><p>Home</p></div>
-          <div className={style.textall}><p>Blogs</p></div>
+          <div className={style.textall} onClick={()=>router.push("/")}><p>Home</p></div>
+          <div className={style.textall} onClick={()=>router.push("/blogs")}><p>Blogs</p></div>
           <div className={style.textall}><p>About</p></div>
           <div className={style.textall}><p>Contact</p></div>
         </div>

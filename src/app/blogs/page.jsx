@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { getPosts } from '../ghost-config';
 import Blogsclient from '../components/blogsclient';
+import Loading from './loading';
 
 const Posts = async() => {
     const posts = await getPosts();
-    // console.log(posts);
+
   return (
     <div>
-      <Blogsclient posts={posts}/>
+      <Suspense fallback={<Loading/>}>
+      <Blogsclient posts={posts} />
+      </Suspense>
     </div>
   )
 }
