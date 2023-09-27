@@ -1,16 +1,23 @@
 import React, { Suspense } from 'react';
 import { getPosts } from '../ghost-config';
-import Blogsclient from '../components/blogsclient';
+
 import Loading from './loading';
+import dynamic from 'next/dynamic';
+
+const Blogsclient = dynamic(()=>import('../components/blogsclient'))
 
 const Posts = async() => {
     const posts = await getPosts();
+    
+   
+    
 
   return (
     <div>
       <Suspense fallback={<Loading/>}>
       <Blogsclient posts={posts} />
       </Suspense>
+      
     </div>
   )
 }

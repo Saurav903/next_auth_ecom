@@ -10,7 +10,7 @@ export default function Index() {
 
   if (user) {
     return (
-      <div>
+      <div style={{paddingTop:"80px"}}>
         Welcome {user.name}! <a href="/api/auth/logout">Logout</a>
       </div>
     );

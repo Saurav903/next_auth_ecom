@@ -6,6 +6,8 @@
     font-size: 50px;
     font-weight: 800;
     color: rgb(180, 179, 179);
+    /* margin-top: 50px; */
+    text-align: center;
 }
 
 .cards{
