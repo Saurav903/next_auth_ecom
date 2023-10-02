@@ -3,11 +3,18 @@ import React, { memo } from 'react'
 import style from "../styles/home.module.css";
 import {homePageMidddleData} from "../contents/info";
 import Image from 'next/image';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import Loading from '../blogs/loading';
 
 const imgs = "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnQlMjBwb3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=300&q=60"
 
 const HomePage = () => {
+    const { user, isLoading } = useUser();
 
+    if(isLoading){
+        return <Loading/>
+    }
+   
   return (
     <div>
         
@@ -17,7 +24,7 @@ const HomePage = () => {
                 <Image src={imgs} alt="" className="max-w-sm rounded-lg shadow-2xl" width={300} height={300}/>
                 <div>
                 <p class={style.headings}>Trending</p>
-                <p className="py-6">
+                <p className="py-6 text-cyan-50">
                     A flowerpot, planter, planterette or plant pot, is a container in which flowers and other plants are                    cultivated and displayed. Historically, and still to a significant extent today, they are made from                 plain terracotta with no ceramic glaze, with a round shape, tapering inwards.</p>
                 <button className="btn btn-primary sm:hidden md:hidden lg:block hidden">Get Started</button>
                 </div>
@@ -42,8 +49,8 @@ const HomePage = () => {
                     <div className="card w-96 glass m-auto" key={i}>
                     <figure><Image src={el.imgs} alt="car!" width={300} height={300} style={{width:"300px",height:"300px",borderRadius:"10px",marginTop:"10px"}}/></figure>
                     <div className="card-body">
-                        <h2 className="card-title">{el.titles}</h2>
-                        <p>{el.para}</p>
+                        <h2 className="card-title text-cyan-50">{el.titles}</h2>
+                        <p className='text-cyan-50'>{el.para}</p>
                         <div className="card-actions justify-end">
                         <button className="btn btn-primary">Learn now!</button>
                         </div>

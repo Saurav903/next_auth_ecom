@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html { 
+    background: url(https://img.freepik.com/premium-photo/green-branch-plant-with-neon-orange-glow-against-dark-starry-sky-generative-ai_76964-10382.jpg?w=740) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+
 .postion{
     z-index: 2;
     position: fixed;

@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import Navbar from './components/navbar';
 import { cookies } from 'next/headers'
+import GoogleAnalytics from './GoogleAnalytics';
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,12 +20,13 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <UserProvider>
+
       <body className={inter.className}>
       <div style={{position:"fixed",zIndex:1,width:"100%"}}>
         <Navbar cook={cook}/>
 
       </div>
-
+      <GoogleAnalytics/>
      {children}
        
         </body>

@@ -5,19 +5,34 @@ import style from "../styles/navbar.module.css"
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Link from 'next/link';
 import { FaBars } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Navbar = ({cook}) => {
   const { user} = useUser();
   let router=useRouter();
 
+  
   const handleBlog = ()=>{
     if(cook){
       router.push("/blogs");
     }else{
-      alert("Login First");
+      
+      toast.error(' Login First!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   }
+
   return (
     <div className={style.navdiv}>
 
@@ -33,7 +48,7 @@ const Navbar = ({cook}) => {
             <li><div className={style.textall}><p>Contact</p></div></li>
           </ul>
         </div>
-        <div className="flex justify-between items-center sm:w-[30%] md:w-40 lg:w-20">
+        <div className="flex justify-between items-center sm:w-0 md:w-0 lg:w-20">
           <span className=" rounded-xl inline-block" style={{height:"20px",width:"20px",backgroundColor:"rgb(240,65,51)"}}></span>
           <span className=" bg-black rounded-xl inline-block" style={{height:"20px",width:"20px",backgroundColor:"rgb(255,162,15)"}}></span>
           <span className=" bg-black rounded-xl inline-block" style={{height:"20px",width:"20px",backgroundColor:"rgb(108,223,36)"}}></span>
@@ -67,6 +82,7 @@ const Navbar = ({cook}) => {
           </div>
         </div> )}
         </>
+        <ToastContainer />
       </div>
     </div>
   )
