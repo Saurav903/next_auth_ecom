@@ -19,7 +19,7 @@ const Blogsclient = ({posts}) => {
 
 
         {posts?.map((el)=>(
-          <div className="card glass w-96 shadow-xl m-auto" key={el.id}>
+          <div className="transform card glass w-96 shadow-xl m-auto transition duration-500 hover:scale-105" key={el.id}>
           <figure ><Link href={`/blogs/${el.slug}`} ><Image   src={el.custom_excerpt} alt="Shoes" width={300} height={300} style={{width:"500px",height:"300px",borderRadius:"10px"}}/></Link></figure>
           <div className="card-body">
             <h2 className="card-title text-cyan-50">

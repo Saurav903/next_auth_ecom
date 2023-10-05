@@ -44,8 +44,8 @@ const Navbar = ({cook}) => {
           <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-[rgb(235,235,235,0.9)] rounded-box w-52">
             <li><div className={style.textall} onClick={()=>router.push("/")}><p>Home</p></div></li>
             <li><div className={style.textall} onClick={handleBlog}><p>Blogs</p></div></li>
-            <li><div className={style.textall}><p>About</p></div></li>
-            <li><div className={style.textall}><p>Contact</p></div></li>
+            <li><div className={style.textall} onClick={()=>router.push("/about")}><p>About</p></div></li>
+            <li><div className={style.textall} onClick={()=>console.log("hi")}><p>Contact</p></div></li>
           </ul>
         </div>
         <div className="flex justify-between items-center sm:w-0 md:w-0 lg:w-20">
@@ -59,8 +59,8 @@ const Navbar = ({cook}) => {
         <div class="w-[40%] m-auto grid grid-cols-4 justify-between gap-10 items-center hidden sm:hidden md:hidden lg:flex" >
           <div className={style.textall} onClick={()=>router.push("/")}><p>Home</p></div>
           <div className={style.textall} onClick={handleBlog}><p>Blogs</p></div>
-          <div className={style.textall}><p>About</p></div>
-          <div className={style.textall}><p>Contact</p></div>
+          <div className={style.textall} onClick={()=>router.push("/about")}><p>About</p></div>
+          <div className={style.textall} onClick={()=>router.push("/contact")}><p>Contact</p></div>
         </div>
 
 
