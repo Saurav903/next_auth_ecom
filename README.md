@@ -42,3 +42,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
   gtag('config', 'G-3BQ6L4WSHE');
 </script> -->
+
+
+<!-- for delete cookies we need to create use action.js in which we have to delete and add cookies -->

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Footers from '../components/footers'
 
@@ -9,7 +10,7 @@ const AboutPage = () => {
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-col text-center w-full mb-20">
       <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-cyan-50">About Plant World</h1>
-      <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-cyan-50">The "Plant World" page is a section of a website or an application dedicated to providing information and resources related to plants. This page typically aims to educate and engage visitors about various aspects of the plant kingdom, including plant types, growth stages, benefits, care tips, and more. Here's a description of what you might find on a "Plant World".</p>
+      <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-cyan-50">The Plant World page is a section of a website or an application dedicated to providing information and resources related to plants. This page typically aims to educate and engage visitors about various aspects of the plant kingdom, including plant types, growth stages, benefits, care tips, and more. Heres a description of what you might find on a Plant World.</p>
     </div>
     <div className="flex flex-wrap -m-4 text-center">
       <div className="p-4 md:w-1/4 sm:w-1/2 w-full">

@@ -48,7 +48,7 @@ const Navbar = ({cook}) => {
             <li><div className={style.textall} onClick={()=>console.log("hi")}><p>Contact</p></div></li>
           </ul>
         </div>
-        <div className="flex justify-between items-center sm:w-0 md:w-0 lg:w-20">
+        <div className="flex justify-between items-center w-0 md:w-0 lg:w-20">
           <span className=" rounded-xl inline-block" style={{height:"20px",width:"20px",backgroundColor:"rgb(240,65,51)"}}></span>
           <span className=" bg-black rounded-xl inline-block" style={{height:"20px",width:"20px",backgroundColor:"rgb(255,162,15)"}}></span>
           <span className=" bg-black rounded-xl inline-block" style={{height:"20px",width:"20px",backgroundColor:"rgb(108,223,36)"}}></span>
@@ -66,7 +66,7 @@ const Navbar = ({cook}) => {
 
 
         <>
-          {cook ? (<div class="flex justify-between items-center w-[25%] sm:w-[20%] md:w-[15%] lg:w-[13%]" style={{width:"24%"}}>
+          {cook ? (<div class="flex justify-between items-center w-[50%] md:w-[50%] lg:w-[25%]">
           <div>
             <p className={style.textalls}>{user?.name}</p>
           </div>

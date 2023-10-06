@@ -21,7 +21,7 @@ const HomePage = () => {
         
         <div >
             <div className="hero min-h-screen ">
-            <div className="hero-content flex-col lg:flex-row-reverse w-[85%] sm:mt-[50px]">
+            <div className="hero-content flex-col lg:flex-row-reverse w-[85%] mt-[80px] sm:mt-[50px]">
                 <Image src={imgs} alt="" className="max-w-sm rounded-lg shadow-2xl" width={300} height={300}/>
                 <div>
                 <p class={style.headings}>Trending</p>
