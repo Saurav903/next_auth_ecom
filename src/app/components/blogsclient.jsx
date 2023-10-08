@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import style from "../styles/blogclient.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
+import style from "../styles/blogclient.module.css";
 
 
 const Blogsclient = ({posts}) => {

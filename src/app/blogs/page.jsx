@@ -4,7 +4,7 @@ import { getPosts } from '../ghost-config';
 import Loading from './loading';
 import dynamic from 'next/dynamic';
 
-const Blogsclient = dynamic(()=>import('../components/blogsclient'))
+const Blogsclient = dynamic(()=>import('../components/blogsclient'),{ssr:false})
 
 const Posts = async() => {
     const posts = await getPosts();

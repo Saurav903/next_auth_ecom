@@ -1,14 +1,18 @@
+import dynamic from 'next/dynamic';
 /* eslint-disable @next/next/next-script-for-ga */
 import './globals.css'
-import { Inter } from 'next/font/google'
+
 import { UserProvider } from '@auth0/nextjs-auth0/client';
+
 import Navbar from './components/navbar';
 import { cookies } from 'next/headers'
 import GoogleAnalytics from './GoogleAnalytics';
+import {Julius_Sans_One} from "@next/font/google";
+
+const julius = Julius_Sans_One({subsets:["latin"],weight:"400",variable:"--julius-font",display:"swap"});
 
 
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,7 +23,7 @@ export default async function RootLayout({ children }) {
   const cookieStore = cookies()
   const cook = cookieStore.get('appSession');
   return (
-    <html lang="en">
+    <html lang="en" >
       <head>
       <script dangerouslySetInnerHTML={{__html:`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -30,11 +34,12 @@ export default async function RootLayout({ children }) {
       </head>
       <UserProvider>
 
-      <body className={inter.className}>
+      <body >
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGLTNXHW"
 height="0" width="0" style={{display:'none',visibility:"hidden"}}></iframe></noscript>
-      <div style={{position:"fixed",zIndex:1,width:"100%"}}>
-        <Navbar cook={cook}/>
+
+      <div className={`${julius.className}`} style={{position:"fixed",zIndex:1,width:"100%"}}>
+        <Navbar cook={cook} />
 
       </div>
       <GoogleAnalytics/>

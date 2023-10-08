@@ -1,5 +1,7 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&family=Julius+Sans+One&display=swap');
+@font-face {
+  font-family: Julius Sans One;
+  src: '../assest/JuliusSansOne-Regular.ttf';
+}
 
 .navdiv{
    
@@ -34,7 +36,7 @@
 }
 
 .textall>p{
-   font-family:Julius Sans One;
+   font-family:var(--julius-font);
    font-weight: 700;
    color: rgb(66, 66, 66);
    display: inline-block;
@@ -69,7 +71,7 @@
 
 /* this is for login */
 .textalls{
-    font-family:Julius Sans One;
+    font-family:var(--julius-font);
     font-weight: 700;
     color: rgb(66, 66, 66);
     display: inline-block;

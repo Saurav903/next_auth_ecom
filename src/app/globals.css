@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&family=Julius+Sans+One&display=swap');
 
 html { 
   /* filter: brightness(50%); */
