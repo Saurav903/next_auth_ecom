@@ -5,6 +5,8 @@ import Link from 'next/link';
 export default function Index() {
   const { user, error, isLoading } = useUser();
 
+  console.log(user);
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 

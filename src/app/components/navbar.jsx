@@ -1,53 +1,26 @@
-"use client"
-import React from 'react'
-import { useRouter } from 'next/navigation';
-import style from "../styles/navbar.module.css"
-import { useUser } from '@auth0/nextjs-auth0/client';
-import Link from 'next/link';
-import { FaBars } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
+
+import React from 'react';
+import style from "../styles/navbar.module.css";
+
 import 'react-toastify/dist/ReactToastify.css';
+import Navbarlogincomponent from './navbarlogincomponent';
+import { cookies } from 'next/headers'
+import Navbarlistup from './navbarlistup';
+import Navbarlistdown from './navbarlistdown';
+
+const Navbar = () => {
+  const cookieStore = cookies()
+  const cook = cookieStore.get('appSession');
 
 
-const Navbar = ({cook}) => {
 
-  const { user} = useUser();
-  let router=useRouter();
-
-  
-  const handleBlog = ()=>{
-    if(cook){
-      router.push("/blogs");
-    }else{
-      
-      toast.error(' Login First!', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-    }
-  }
 
   return (
     <div className={style.navdiv} >
 
 
 <div className={style.nav}>
-  <div className='text-xl sm:block md:block lg:hidden p-10 dropdown bg-red'>
-    <label tabIndex={0} className="btn m-1 bg-[rgb(235,235,235,0.1)] text-[rgb(66,66,66
-      +)] border-none"><FaBars/></label>
-    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-[rgb(235,235,235,0.9)] rounded-box w-52">
-      <li><div className={style.textall} onClick={()=>router.push("/")} ><p>Home</p></div></li>
-      <li><div className={style.textall} onClick={handleBlog}><p>Blogs</p></div></li>
-      <li><div className={style.textall} onClick={()=>router.push("/about")}><p>About</p></div></li>
-      <li><div className={style.textall} onClick={()=>console.log("hi")}><p>Contact</p></div></li>
-    </ul>
-  </div>
+  <Navbarlistup cook={cook}/>
   <div className="flex justify-between items-center w-0 md:w-0 lg:w-20">
     <span className=" rounded-xl inline-block" style={{height:"20px",width:"20px",backgroundColor:"rgb(240,65,51)"}}></span>
     <span className=" bg-black rounded-xl inline-block" style={{height:"20px",width:"20px",backgroundColor:"rgb(255,162,15)"}}></span>
@@ -56,33 +29,12 @@ const Navbar = ({cook}) => {
 
 
 
-  <div class="w-[40%] m-auto grid grid-cols-4 justify-between gap-10 items-center hidden sm:hidden md:hidden lg:flex" >
-    <div className={style.textall} onClick={()=>router.push("/")}><p>Home</p></div>
-    <div className={style.textall} onClick={handleBlog}><p>Blogs</p></div>
-    <div className={style.textall} onClick={()=>router.push("/about")}><p>About</p></div>
-    <div className={style.textall} onClick={()=>router.push("/contact")}><p>Contact</p></div>
-  </div>
-
-
+  <Navbarlistdown cook={cook}/>
 
   <>
-    {cook ? (<div class="flex justify-between items-center w-[50%] md:w-[50%] lg:w-[25%]">
-    <div>
-      <p className={style.textalls}>{user?.name}</p>
-    </div>
-    <div>
-      <a as={Link} href={"/api/auth/logout"} className={style.textalls}>Logout</a>
-    </div>
-    </div>):( <div class="flex justify-between items-center w-[25%] sm:w-[20%] md:w-[15%] lg:w-[13%]">
-    <div>
-      <a as={Link} href={"/api/auth/login"} className={style.textalls}>Login</a>
-    </div>
-    <div>
-      <a as={Link} href={"https://dev-1hrb13y4n67dubxk.us.auth0.com/u/signup?state=hKFo2SBkazA4bm11NEpURVNUWWFqNVJ5X3JYamFiSGdYcWF6b6Fur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDMtNGxBQ3RMcFdULVAzVy10eGRNSE9zMmktd1M0aHEzo2NpZNkgdDhHazA1enhaRjZoSFdvUUZQMkwxUzBZaFI0SUR1STU"} className={style.textalls}>Signup</a>
-    </div>
-  </div> )}
+    <Navbarlogincomponent cook={cook}/>
   </>
-  <ToastContainer />
+
 </div>
 </div>
 

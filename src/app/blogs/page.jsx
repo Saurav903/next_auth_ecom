@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
-import { getPosts } from '../ghost-config';
+import { getPosts } from '../services/ghost-config';
+
 
 import Loading from './loading';
 import dynamic from 'next/dynamic';

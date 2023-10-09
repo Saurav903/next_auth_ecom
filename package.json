@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.1.0",
-    "@next/font": "^13.5.4",
     "@tryghost/content-api": "^1.11.16",
     "autoprefixer": "10.4.15",
     "dotenv": "^16.3.1",
