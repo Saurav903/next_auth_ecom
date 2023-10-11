@@ -1,14 +1,17 @@
-"use client";
+// "use client";
 import React, { memo } from "react";
 import style from "../styles/home.module.css";
-import { homePageMidddleData } from "../contents/info";
+
 import Image from "next/image";
 import Footers from "./footers";
+import { getapihome } from "../services/apicall";
 
-const imgs =
-  "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnQlMjBwb3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=300&q=60";
 
-const HomePage = () => {
+
+const HomePage = async() => {
+
+
+  let homePageMidddleData = await getapihome();
 
 
   return (
@@ -17,7 +20,7 @@ const HomePage = () => {
         <div className="hero min-h-screen ">
           <div className="hero-content flex-col lg:flex-row-reverse w-[85%] mt-[80px] sm:mt-[50px]">
             <Image
-              src={imgs}
+              src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnQlMjBwb3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=300&q=60"
               alt=""
               className="max-w-sm rounded-lg shadow-2xl"
               width={300}
@@ -62,11 +65,11 @@ const HomePage = () => {
           </div>
           <div className="flex justify-center px-4 py-16 border-t border-base-600">
             <div class="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-              {homePageMidddleData?.map((el, i) => (
+              {homePageMidddleData.pages?.map((el, i) => (
                 <div className="card w-96 glass m-auto" key={i}>
                   <figure>
                     <Image
-                      src={el.imgs}
+                      src={el.custom_excerpt}
                       alt="car!"
                       width={300}
                       height={300}
@@ -79,8 +82,8 @@ const HomePage = () => {
                     />
                   </figure>
                   <div className="card-body">
-                    <h2 className="card-title text-cyan-50">{el.titles}</h2>
-                    <p className="text-cyan-50">{el.para}</p>
+                    <h2 className="card-title text-cyan-50">{el.title}</h2>
+                    <div dangerouslySetInnerHTML={{__html:el.html}} className="text-cyan-50" />
                     <div className="card-actions justify-end">
                       <button className="btn btn-primary">Learn now!</button>
                     </div>

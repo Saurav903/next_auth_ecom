@@ -45,3 +45,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 <!-- for delete cookies we need to create use action.js in which we have to delete and add cookies -->
+
+
+<!-- NEXT_PUBLIC <-- is used in .env.local before declaring variable -->

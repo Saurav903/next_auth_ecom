@@ -12,3 +12,15 @@ export const getapislug = async(params)=>{
     }
     
 }
+
+
+export const getapihome = async()=>{
+  let data;
+  try {
+    data = await fetch(`${process.env.URL_OF_PAGES}`);
+    data = await data.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}

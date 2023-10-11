@@ -3,13 +3,14 @@ import React from 'react'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import {Link} from "next/navigation"
 import style from "../styles/navbar.module.css";
+import Loading from '../blogs/loading';
 const Navbarlogincomponent = ({cook}) => {
-    const { user} = useUser();
+    const { user,isLoading} = useUser();
   return (
     <>
         {cook ? (<div class="flex justify-between items-center w-[50%] md:w-[50%] lg:w-[25%]">
     <div>
-      <p className={style.textalls}>{user?.name}</p>
+      <p className={style.textalls}>{isLoading ?"...Loading" : user.name }</p>
     </div>
     <div>
       <a as={Link} href={"/api/auth/logout"} className={style.textalls}>Logout</a>
