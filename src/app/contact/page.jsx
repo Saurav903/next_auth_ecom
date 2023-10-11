@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef, useState } from 'react'
 import style from "../styles/contact.module.css"
+// import * as gtag from "../../gtag.js"
 
 const ContactPage = () => {
 
@@ -21,6 +22,7 @@ const handleChange = (e)=>{
 }
 
   const handleClick = ()=>{
+    typeof window !== "undefined" && window.gtag("event", "click", { ...data })
     setValue({
       name:"",
       email:"",

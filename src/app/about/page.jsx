@@ -3,7 +3,11 @@ import React from 'react'
 import Footers from '../components/footers'
 import style from "../styles/about.module.css"
 
-
+export const generateMetadata=()=>{
+  return {
+    title: "About - Nextjs 13 Blog"
+  }
+}
 const AboutPage = () => {
   return (
     <div>

@@ -10,20 +10,36 @@ const GoogleAnalytics = () => {
 
     return (
         <>
-            <Script
-                strategy="afterInteractive"
-                src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+            <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{
+          __html: 
+                `var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', '${process.env.NEXT_PUBLIC_GOOGLE_ID}']);
+                _gaq.push(['_setDomainName', 'none']);
+                _gaq.push(['_setAllowLinker', 'true']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();`
+,
+        }}/>
+            <script async
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ID}`}
             />
-            <Script
-                id="gtag-init"
-                strategy="afterInteractive"
+            <script
+                // id="gtag-init"
+                // strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
                     __html: `
                       window.dataLayer = window.dataLayer || [];
                       function gtag(){dataLayer.push(arguments);}
                       gtag('js', new Date());
-                      gtag('config', '${gtag.GA_TRACKING_ID}', {
-                      page_path: window.location.pathname,
+                      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ID}', {
+    
                       });
                     `,
                 }}

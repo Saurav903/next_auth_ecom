@@ -3,6 +3,11 @@ import React, { Suspense } from 'react'
 import Loading from '../loading';
 import { getapislug } from '@/app/services/apicall';
 
+export const generateMetadata=({params})=>{
+  return {
+    title: `${params.slug} Nextjs blogs`
+  }
+}
 
 
 const Slugpage = async({params}) => {
