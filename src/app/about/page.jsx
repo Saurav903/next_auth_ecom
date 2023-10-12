@@ -8,6 +8,7 @@ export const generateMetadata=()=>{
     title: "About - Nextjs 13 Blog"
   }
 }
+
 const AboutPage = () => {
   return (
     <div>
