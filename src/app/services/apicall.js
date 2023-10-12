@@ -14,6 +14,7 @@ export const getapislug = async(params)=>{
 }
 
 
+
 export const getapihome = async()=>{
   let data;
   try {

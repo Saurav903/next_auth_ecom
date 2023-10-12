@@ -7,6 +7,7 @@ const api = new GhostContentAPI({
     version:"v5.0"
 })
 
+
 export async function getPosts(){
     return await api.posts
     .browse({
