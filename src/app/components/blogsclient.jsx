@@ -8,7 +8,7 @@ import style from "../styles/blogclient.module.css";
 
 const Blogsclient = ({posts}) => {
   // console.log(posts);
-  
+
 
  
   return (
